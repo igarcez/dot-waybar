@@ -5,7 +5,7 @@
 	"height": 24, // Waybar height
 	// "width": 1366, // Waybar width
 	// Choose the order of the modules
-	"modules-left": ["hyprland/workspaces"],
+	"modules-left": ["hyprland/submap", "hyprland/workspaces"],
 	"modules-center": ["hyprland/window"],
 	// todo I want audio, network, calendar and clock
 	// network should be only icons for disconnected wifi or cable
