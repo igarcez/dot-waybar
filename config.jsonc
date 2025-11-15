@@ -1,12 +1,10 @@
 // -*- mode: jsonc -*-
-{
+[{
 	"layer": "top", // Waybar at top layer
 	"position": "top", // Waybar at the bottom of your screen
-	"height": 24, // Waybar height
-	// "width": 1366, // Waybar width
-	// Choose the order of the modules
-	"modules-left": ["hyprland/submap", "hyprland/workspaces", "mpris"],
-	"modules-center": ["hyprland/window"],
+	"height": 30, // Waybar height
+	"modules-left": ["hyprland/submap", "hyprland/workspaces", "hyprland/window"],
+	"modules-center": ["mpris", "custom/cava"],
 	// todo I want audio, network, calendar and clock
 	// network should be only icons for disconnected wifi or cable
 	// todo what is tray?
@@ -90,5 +88,10 @@
             "playing": "▶",
             "paused": "⏸"
         }
-    }
+    },
+    "custom/cava": {
+            "format": "{}",
+            "exec": "~/.config/waybar/cava.sh"
+        }
 }
+]
