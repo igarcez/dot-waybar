@@ -1,97 +1,97 @@
 // -*- mode: jsonc -*-
-[{
-	"layer": "top", // Waybar at top layer
-	"position": "top", // Waybar at the bottom of your screen
-	"height": 30, // Waybar height
-	"modules-left": ["hyprland/submap", "hyprland/workspaces", "hyprland/window"],
-	"modules-center": ["mpris", "custom/cava"],
-	// todo I want audio, network, calendar and clock
-	// network should be only icons for disconnected wifi or cable
-	// todo what is tray?
-	"modules-right": ["pulseaudio", "network", "tray", "clock"],
-	"hyprland/workspaces": {
-		"format": "{icon}",
-		"on-click": "activate",
-		"format-icons": {
-			"1": "N",
-			"2": "H",
-			"3": "T",
-			"4": "R",
-			"5": "G",
-			"6": "C",
-			"7": "V",
-			"8": "M",
-			"9": "W",
-			"urgent": "",
-			"active": "",
-			"default": ""
+[
+	{
+		"layer": "top",
+		"position": "top",
+		"height": "30px",
+		"modules-left": [
+			"hyprland/submap",
+			"hyprland/workspaces",
+			"hyprland/window"
+		],
+		"modules-center": ["mpris", "custom/bars"],
+		"modules-right": ["pulseaudio", "network", "tray", "battery", "clock"],
+		"hyprland/workspaces": {
+			"format": "{icon}",
+			"on-click": "activate",
+			"format-icons": {
+				"1": "N",
+				"2": "H",
+				"3": "T",
+				"4": "R",
+				"5": "G",
+				"6": "C",
+				"7": "V",
+				"8": "M",
+				"9": "W",
+				"urgent": "",
+				"active": "",
+				"default": ""
+			},
+			"sort-by-number": true
 		},
-		"sort-by-number": true
-	},
-    "hyprland/window": {
-        "separate-outputs": true
-    },
-	"tray": {
-		"icon-size": 21,
-		"spacing": 10
-	},
-	"clock": {
-		"format-alt": "{:%Y-%m-%d}"
-	},
-	"cpu": {
-		"format": "{usage}% "
-	},
-	"memory": {
-		"format": "{}% "
-	},
-	"battery": {
-		"bat": "BAT0",
-		"states": {
-			// "good": 95,
-			"warning": 30,
-			"critical": 15
+		"hyprland/window": {
+			"separate-outputs": true
 		},
-		"format": "{capacity}% {icon}",
-		// "format-good": "", // An empty format will hide the module
-		// "format-full": "",
-		"format-icons": ["", "", "", "", ""]
-	},
-	"network": {
-		// "interface": "wlp2s0", // (Optional) To force the use of this interface
-		"format-wifi": "{essid} ({signalStrength}%) ",
-		//"format-ethernet": "{ifname}: {ipaddr}/{cidr} ",
-		"format-ethernet": "",
-		"format-disconnected": "Disconnected ⚠"
-	},
-	"pulseaudio": {
-		//"scroll-step": 1,
-		"format": "{volume}% {icon}",
-		"format-bluetooth": "{volume}% {icon}",
-		"format-muted": "",
-		"format-icons": {
-			"headphones": "",
-			"handsfree": "",
-			"headset": "",
-			"phone": "",
-			"portable": "",
-			"car": "",
-			"default": ["", ""]
+		"tray": {
+			"icon-size": 21,
+			"spacing": 10
 		},
-		"on-click": "pavucontrol"
-	},
-    "mpris": {
-        "format": "{status_icon} {artist} - {title}",
-        "player-icons": {
-            "default": "▶"
-        },
-        "status-icons": {
-            "playing": "▶",
-            "paused": "⏸"
-        }
-    },
-    "custom/cava": {
-            "format": "{}",
-            "exec": "~/.config/waybar/cava.sh"
-        }
-}
+		"clock": {
+			"format-alt": "{:%Y-%m-%d}"
+		},
+		"cpu": {
+			"format": "{usage}% "
+		},
+		"memory": {
+			"format": "{}% "
+		},
+		"battery": {
+			"bat": "BAT0",
+			"states": {
+				"good": 95,
+				"warning": 30,
+				"critical": 15
+			},
+			"format": "{capacity}% {icon}",
+			// "format-good": "", // An empty format will hide the module
+			// "format-full": "",
+			"format-icons": ["", "", "", "", ""]
+		},
+		"network": {
+			"format-wifi": "{essid} ({signalStrength}%) ",
+			"format-ethernet": "",
+			"format-disconnected": "Disconnected ⚠"
+		},
+		"pulseaudio": {
+			//"scroll-step": 1,
+			"format": "{volume}% {icon}",
+			"format-bluetooth": "{volume}% {icon}",
+			"format-muted": "",
+			"format-icons": {
+				"headphones": "",
+				"handsfree": "",
+				"headset": "",
+				"phone": "",
+				"portable": "",
+				"car": "",
+				"default": ["", ""]
+			},
+			"on-click": "pavucontrol"
+		},
+		"mpris": {
+			"format": "{status_icon} {artist} - {title}",
+			"player-icons": {
+				"default": "▶"
+			},
+			"status-icons": {
+				"playing": "▶",
+				"paused": "⏸"
+			}
+		},
+		"custom/bars": {
+			"format": "{}",
+			"exec": "~/.config/waybar/bars.sh"
+		}
+	}
 ]
