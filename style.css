@@ -111,3 +111,7 @@
 #mpris {
 	margin-right: 8pt;
 }
+
+#custom-cava {
+    color: rgba(255,255,255, 0.3);
+}

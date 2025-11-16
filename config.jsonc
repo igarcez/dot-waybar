@@ -9,7 +9,7 @@
 			"hyprland/workspaces",
 			"hyprland/window"
 		],
-		"modules-center": ["mpris", "custom/bars"],
+		"modules-center": ["mpris", "custom/cava"],
 		"modules-right": ["pulseaudio", "network", "tray", "battery", "clock"],
 		"hyprland/workspaces": {
 			"format": "{icon}",
@@ -92,6 +92,10 @@
 		"custom/bars": {
 			"format": "{}",
 			"exec": "~/.config/waybar/bars.sh"
-		}
+		},
+        "custom/cava": {
+            "format": "{}",
+            "exec": "~/.config/waybar/cava.sh"
+        }
 	}
 ]
